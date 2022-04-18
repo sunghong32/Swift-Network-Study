@@ -23,6 +23,7 @@ struct CityCovidOverView: Codable {
     let seoul: CovidOverView
     let busan: CovidOverView
     let daegu: CovidOverView
+    let incheon: CovidOverView
     let gwangju: CovidOverView
     let daejeon: CovidOverView
     let ulsan: CovidOverView
@@ -36,4 +37,8 @@ struct CityCovidOverView: Codable {
     let gyeongbuk: CovidOverView
     let gyeongnam: CovidOverView
     let jeju: CovidOverView
+
+    func getAllCases() -> [CovidOverView] {
+        return [korea, seoul, busan, daegu, incheon, gwangju, daejeon, ulsan, sejong, gyeonggi, gangwon, chungbuk, chungnam, jeonbuk, jeonnam, gyeongbuk,gyeongnam, jeju]
+    }
 }
