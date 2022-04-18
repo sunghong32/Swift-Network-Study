@@ -15,7 +15,7 @@
 		651B6FF72806F698005A7853 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 651B6FF52806F698005A7853 /* Main.storyboard */; };
 		651B6FF92806F699005A7853 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 651B6FF82806F699005A7853 /* Assets.xcassets */; };
 		651B6FFC2806F699005A7853 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 651B6FFA2806F699005A7853 /* LaunchScreen.storyboard */; };
-		655470B62806F93900ECA485 /* COVIDDetailViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655470B52806F93900ECA485 /* COVIDDetailViewViewController.swift */; };
+		655470B62806F93900ECA485 /* COVIDDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655470B52806F93900ECA485 /* COVIDDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,7 +30,7 @@
 		651B6FF82806F699005A7853 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		651B6FFB2806F699005A7853 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		651B6FFD2806F699005A7853 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		655470B52806F93900ECA485 /* COVIDDetailViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = COVIDDetailViewViewController.swift; sourceTree = "<group>"; };
+		655470B52806F93900ECA485 /* COVIDDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = COVIDDetailViewController.swift; sourceTree = "<group>"; };
 		ED1BA1EA648BF9B3CC199EEC /* Pods_COVID19.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_COVID19.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -79,7 +79,7 @@
 				651B6FEF2806F698005A7853 /* AppDelegate.swift */,
 				651B6FF12806F698005A7853 /* SceneDelegate.swift */,
 				651B6FF32806F698005A7853 /* ViewController.swift */,
-				655470B52806F93900ECA485 /* COVIDDetailViewViewController.swift */,
+				655470B52806F93900ECA485 /* COVIDDetailViewController.swift */,
 				65183AEC280D76E800155986 /* CityCovidOverView.swift */,
 				651B6FF52806F698005A7853 /* Main.storyboard */,
 				651B6FF82806F699005A7853 /* Assets.xcassets */,
@@ -212,7 +212,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				655470B62806F93900ECA485 /* COVIDDetailViewViewController.swift in Sources */,
+				655470B62806F93900ECA485 /* COVIDDetailViewController.swift in Sources */,
 				651B6FF42806F698005A7853 /* ViewController.swift in Sources */,
 				65183AED280D76E800155986 /* CityCovidOverView.swift in Sources */,
 				651B6FF02806F698005A7853 /* AppDelegate.swift in Sources */,

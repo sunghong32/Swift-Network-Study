@@ -14,11 +14,19 @@ class ViewController: UIViewController {
     @IBOutlet weak var newCaseLabel: UILabel!
     
     @IBOutlet weak var pieChartView: PieChartView!
-
+    @IBOutlet weak var labelStackView: UIStackView!
+    @IBOutlet weak var indicatorView: UIActivityIndicatorView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.indicatorView.startAnimating()
         self.fetchCovidOverview(completionHandler: { [weak self] result in
             guard let self = self else { return }
+
+            self.indicatorView.stopAnimating()
+            self.indicatorView.isHidden = true
+            self.labelStackView.isHidden = false
+            self.pieChartView.isHidden = false
 
             switch result {
                 case .success(let result):
@@ -36,6 +44,7 @@ class ViewController: UIViewController {
     }
 
     func configureChartView(covidOverViewList: [CovidOverView]) {
+        self.pieChartView.delegate = self
         let entries = covidOverViewList.compactMap { [weak self] overview -> PieChartDataEntry? in
             guard let self = self else { return nil }
 
@@ -99,3 +108,12 @@ class ViewController: UIViewController {
     }
 }
 
+extension ViewController: ChartViewDelegate {
+    func chartValueSelected(_ chartView: ChartViewBase, entry: ChartDataEntry, highlight: Highlight) {
+        guard let covidDetailViewController = self.storyboard?.instantiateViewController(identifier: "COVIDDetailViewController") as? COVIDDetailViewViewController else { return }
+
+        guard let covidOverview = entry.data as? CovidOverView else { return }
+        covidDetailViewController.covidOverview = covidOverview
+        self.navigationController?.pushViewController(covidDetailViewController, animated: true)
+    }
+}
