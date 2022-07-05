@@ -24,8 +24,7 @@ class BeerListViewController: UITableViewController {
         tableView.rowHeight = 150
         tableView.prefetchDataSource = self
 
-        fetchBeer(of: currentPage
-    )
+        fetchBeer(of: currentPage)
     }
 }
 
