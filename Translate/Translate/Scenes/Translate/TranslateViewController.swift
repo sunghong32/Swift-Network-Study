@@ -31,7 +31,7 @@ final class TranslateViewController: UIViewController {
         button.titleLabel?.font = .systemFont(ofSize: 15.0, weight: .semibold)
         button.setTitleColor(.label, for: .normal)
         button.backgroundColor = .systemBackground
-        button.layer.cornerRadius = 9.0
+        button.layer.cornerRadius = 9
 
         button.addTarget(self, action: #selector(didTapTargetLanguageButton), for: .touchUpInside)
 
