@@ -9,11 +9,6 @@ import SnapKit
 import UIKit
 
 final class TranslateViewController: UIViewController {
-    enum `Type` {
-        case source
-        case target
-    }
-
     private var sourceLanguage: Language = .ko
     private var targetLanguage: Language = .en
 
@@ -73,16 +68,41 @@ final class TranslateViewController: UIViewController {
     private lazy var bookmarkButton: UIButton = {
         let button = UIButton()
         button.setImage(UIImage(systemName: "bookmark"), for: .normal)
+        button.addTarget(self, action: #selector(didTapBookmarkButton), for: .touchUpInside)
 
         return button
     }()
+
+    @objc func didTapBookmarkButton() {
+        guard let sourceText = sourceLabel.text,
+              let translatedText = resultLabel.text,
+              bookmarkButton.imageView?.image == UIImage(systemName: "bookmark") else { return }
+
+        bookmarkButton.setImage(UIImage(systemName: "bookmark.fill"), for: .normal)
+
+        let currentBookmarks: [Bookmark] = UserDefaults.standard.bookmarks
+        let newBookmark = Bookmark(sourceLanguage: sourceLanguage,
+                                   translatedLanguage: targetLanguage,
+                                   sourceText: sourceText,
+                                   tranlatedText: translatedText
+        )
+
+        UserDefaults.standard.bookmarks = [newBookmark] + currentBookmarks
+
+        print(UserDefaults.standard.bookmarks)
+    }
 
     private lazy var copyButton: UIButton = {
         let button = UIButton()
         button.setImage(UIImage(systemName: "doc.on.doc"), for: .normal)
+        button.addTarget(self, action: #selector(didTapCopyButton), for: .touchUpInside)
 
         return button
     }()
+
+    @objc func didTapCopyButton() {
+        UIPasteboard.general.string = resultLabel.text
+    }
 
     private lazy var sourceLabelBaseButton: UIView = {
         let view = UIView()
@@ -99,7 +119,6 @@ final class TranslateViewController: UIViewController {
         let label = UILabel()
         label.text = "텍스트 입력"
         label.textColor = .tertiaryLabel
-        // TODO: sourceLabel
         label.font = .systemFont(ofSize: 23.0, weight: .semibold)
 
         return label
@@ -120,6 +139,8 @@ extension TranslateViewController: SourceTextViewControllerDelegate {
 
         sourceLabel.text = sourceText
         sourceLabel.textColor = .label
+
+        bookmarkButton.setImage(UIImage(systemName: "bookmark"), for: .normal)
     }
 }
 

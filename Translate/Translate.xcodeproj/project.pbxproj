@@ -15,8 +15,14 @@
 		655E219928745F31003988FD /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 655E219828745F31003988FD /* Alamofire */; };
 		655E219C28745F47003988FD /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 655E219B28745F47003988FD /* SnapKit */; };
 		655E219F287462A5003988FD /* TranslateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655E219E287462A5003988FD /* TranslateViewController.swift */; };
+		65E936782885775C006F3C25 /* BookmarkListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E936772885775C006F3C25 /* BookmarkListViewController.swift */; };
+		65E9367A28857AB0006F3C25 /* BookmarkCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E9367928857AB0006F3C25 /* BookmarkCollectionViewCell.swift */; };
+		65E9367C28857D9C006F3C25 /* BookmarkTextStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E9367B28857D9C006F3C25 /* BookmarkTextStackView.swift */; };
+		65E9367E28858171006F3C25 /* Type.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E9367D28858171006F3C25 /* Type.swift */; };
 		65FFBFDC287D8F0400FC3505 /* SourceTextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FFBFDB287D8F0400FC3505 /* SourceTextViewController.swift */; };
 		65FFBFDF287D9BA200FC3505 /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FFBFDE287D9BA200FC3505 /* Language.swift */; };
+		65FFBFE1287D9DEA00FC3505 /* Bookmark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FFBFE0287D9DEA00FC3505 /* Bookmark.swift */; };
+		65FFBFE3287D9F5B00FC3505 /* UserDefaults+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FFBFE2287D9F5B00FC3505 /* UserDefaults+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,8 +34,14 @@
 		655E218F28745F1B003988FD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		655E219128745F1B003988FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		655E219E287462A5003988FD /* TranslateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateViewController.swift; sourceTree = "<group>"; };
+		65E936772885775C006F3C25 /* BookmarkListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkListViewController.swift; sourceTree = "<group>"; };
+		65E9367928857AB0006F3C25 /* BookmarkCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkCollectionViewCell.swift; sourceTree = "<group>"; };
+		65E9367B28857D9C006F3C25 /* BookmarkTextStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkTextStackView.swift; sourceTree = "<group>"; };
+		65E9367D28858171006F3C25 /* Type.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Type.swift; sourceTree = "<group>"; };
 		65FFBFDB287D8F0400FC3505 /* SourceTextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceTextViewController.swift; sourceTree = "<group>"; };
 		65FFBFDE287D9BA200FC3505 /* Language.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Language.swift; sourceTree = "<group>"; };
+		65FFBFE0287D9DEA00FC3505 /* Bookmark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bookmark.swift; sourceTree = "<group>"; };
+		65FFBFE2287D9F5B00FC3505 /* UserDefaults+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,8 +78,9 @@
 			children = (
 				655E218328745F1B003988FD /* AppDelegate.swift */,
 				655E218528745F1B003988FD /* SceneDelegate.swift */,
-				65FFBFDE287D9BA200FC3505 /* Language.swift */,
+				65E9368028858289006F3C25 /* Model */,
 				655E219D28746291003988FD /* Scenes */,
+				65FFBFE4287D9F8800FC3505 /* Extension */,
 				655E218C28745F1B003988FD /* Assets.xcassets */,
 				655E218E28745F1B003988FD /* LaunchScreen.storyboard */,
 				655E219128745F1B003988FD /* Info.plist */,
@@ -80,8 +93,29 @@
 			children = (
 				655E218728745F1B003988FD /* TabBarController.swift */,
 				65FFBFDD287D8F2500FC3505 /* Translate */,
+				65E9367F2885826C006F3C25 /* Bookmark */,
 			);
 			path = Scenes;
+			sourceTree = "<group>";
+		};
+		65E9367F2885826C006F3C25 /* Bookmark */ = {
+			isa = PBXGroup;
+			children = (
+				65E936772885775C006F3C25 /* BookmarkListViewController.swift */,
+				65E9367928857AB0006F3C25 /* BookmarkCollectionViewCell.swift */,
+				65E9367B28857D9C006F3C25 /* BookmarkTextStackView.swift */,
+			);
+			path = Bookmark;
+			sourceTree = "<group>";
+		};
+		65E9368028858289006F3C25 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				65FFBFDE287D9BA200FC3505 /* Language.swift */,
+				65FFBFE0287D9DEA00FC3505 /* Bookmark.swift */,
+				65E9367D28858171006F3C25 /* Type.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		65FFBFDD287D8F2500FC3505 /* Translate */ = {
@@ -91,6 +125,14 @@
 				65FFBFDB287D8F0400FC3505 /* SourceTextViewController.swift */,
 			);
 			path = Translate;
+			sourceTree = "<group>";
+		};
+		65FFBFE4287D9F8800FC3505 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				65FFBFE2287D9F5B00FC3505 /* UserDefaults+.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -171,12 +213,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65FFBFE3287D9F5B00FC3505 /* UserDefaults+.swift in Sources */,
 				65FFBFDC287D8F0400FC3505 /* SourceTextViewController.swift in Sources */,
 				655E218828745F1B003988FD /* TabBarController.swift in Sources */,
+				65E936782885775C006F3C25 /* BookmarkListViewController.swift in Sources */,
+				65E9367A28857AB0006F3C25 /* BookmarkCollectionViewCell.swift in Sources */,
 				655E219F287462A5003988FD /* TranslateViewController.swift in Sources */,
 				65FFBFDF287D9BA200FC3505 /* Language.swift in Sources */,
 				655E218428745F1B003988FD /* AppDelegate.swift in Sources */,
+				65FFBFE1287D9DEA00FC3505 /* Bookmark.swift in Sources */,
+				65E9367C28857D9C006F3C25 /* BookmarkTextStackView.swift in Sources */,
 				655E218628745F1B003988FD /* SceneDelegate.swift in Sources */,
+				65E9367E28858171006F3C25 /* Type.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
